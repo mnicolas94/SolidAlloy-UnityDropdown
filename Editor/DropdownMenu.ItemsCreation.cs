@@ -62,9 +62,9 @@
         {
             var parentNode = Root;
 
-            foreach (var folderName in path.AsSpan().Split('/'))
+            foreach (var folderName in path.Split('/'))
             {
-                parentNode = parentNode.FindChild(folderName) ?? parentNode.AddChildFolder(folderName.ToString());
+                parentNode = parentNode.FindChild(folderName) ?? parentNode.AddChildFolder(folderName);
             }
 
             return parentNode;
